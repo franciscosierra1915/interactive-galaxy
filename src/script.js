@@ -180,17 +180,17 @@ generateGalaxy()
 /**
  * Cursor
  */
-//  const cursor = {}
-//  cursor.x = 0
-//  cursor.y = 0
+ const cursor = {}
+ cursor.x = 0
+ cursor.y = 0
 
-//  window.addEventListener('mousemove', (event) =>
-//  {
-//      cursor.x = event.clientX / sizes.width - 0.5
-//      cursor.y = event.clientY / sizes.height - 0.5
+ window.addEventListener('mousemove', (event) =>
+ {
+     cursor.x = event.clientX / sizes.width - 0.5
+     cursor.y = event.clientY / sizes.height - 0.5
  
-//      console.log(cursor)
-//  })
+     material.uniforms.uSize.value = 30 * cursor.x * 6
+ })
 
 
 /**
@@ -204,6 +204,7 @@ const tick = () =>
 
     // Update material
     material.uniforms.uTime.value = elapsedTime * 0.1
+    
 
     // Update controls
     controls.update()
