@@ -90,7 +90,7 @@ const generateGalaxy = () =>
         scales[i] = Math.random()
     }
 
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 4))
     geometry.setAttribute('aRandomness', new THREE.BufferAttribute(randomness, 3))
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3))
     geometry.setAttribute('aScale', new THREE.BufferAttribute(scales, 1))
@@ -178,6 +178,22 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 generateGalaxy()
 
 /**
+ * Cursor
+ */
+//  const cursor = {}
+//  cursor.x = 0
+//  cursor.y = 0
+
+//  window.addEventListener('mousemove', (event) =>
+//  {
+//      cursor.x = event.clientX / sizes.width - 0.5
+//      cursor.y = event.clientY / sizes.height - 0.5
+ 
+//      console.log(cursor)
+//  })
+
+
+/**
  * Animate
  */
 const clock = new THREE.Clock()
@@ -187,7 +203,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update material
-    material.uniforms.uTime.value = elapsedTime
+    material.uniforms.uTime.value = elapsedTime * 0.1
 
     // Update controls
     controls.update()
