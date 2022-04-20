@@ -105,7 +105,8 @@ const generateGalaxy = () =>
         uniforms:
         {
             uTime: { value: 0 },
-            uSize: { value: 30 * renderer.getPixelRatio() }
+            uSize: { value: 30 * renderer.getPixelRatio() },
+            uTouch: { value: null }
         },    
         vertexShader: galaxyVertexShader,
         fragmentShader: galaxyFragmentShader
